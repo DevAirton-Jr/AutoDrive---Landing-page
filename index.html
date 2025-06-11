@@ -1,0 +1,602 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+    
+    <script>tailwind.config = {
+  "theme": {
+    "extend": {
+      "colors": {
+        "black": "#000000",
+        "graphite": "#1B1B1D",
+        "darkgray": "#A9A9A9",
+        "gold": "#FFD700",
+        "navy": "#000080"
+      },
+      "fontFamily": {
+        "playfair": [
+          "\"Playfair Display\"",
+          "serif"
+        ],
+        "montserrat": [
+          "Montserrat",
+          "sans-serif"
+        ],
+        "sans": [
+          "Inter",
+          "sans-serif"
+        ]
+      }
+    }
+  }
+};</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&amp;display=swap"><style>
+      body {
+        font-family: 'Inter', sans-serif !important;
+      }
+      
+      /* Preserve Font Awesome icons */
+      .fa, .fas, .far, .fal, .fab {
+        font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+      }
+    </style><style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  </style></head>
+<body class="bg-graphite text-white font-montserrat">
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 w-full bg-black bg-opacity-90 z-50 py-4">
+        <div class="container mx-auto px-4 md:px-8 flex items-center justify-between">
+            <span class="flex items-center cursor-pointer">
+                <span class="text-2xl font-playfair font-bold text-white">Auto<span class="text-gold">Drive</span></span>
+            </span>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <span class="text-white hover:text-gold transition-colors duration-300 cursor-pointer">Home</span>
+                <span class="text-white hover:text-gold transition-colors duration-300 cursor-pointer">Benefícios</span>
+                <span class="text-white hover:text-gold transition-colors duration-300 cursor-pointer">Frota</span>
+                <span class="text-white hover:text-gold transition-colors duration-300 cursor-pointer">Depoimentos</span>
+                <span class="text-white hover:text-gold transition-colors duration-300 cursor-pointer">Contato</span>
+            </nav>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+            
+            <!-- CTA Button -->
+            <span class="hidden md:block bg-gold hover:bg-opacity-80 text-black font-medium px-6 py-2 rounded-md transition-all duration-300 cursor-pointer">
+                Alugar agora
+            </span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden pt-16">
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover object-center" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a3d400cc2d-a2ae1f9516e9ac90e6df.png" alt="luxury black Mercedes-Benz car with dramatic lighting against dark background, professional automotive photography, cinematic, high-end">
+            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 md:px-8 relative z-10 text-center">
+            <h1 class="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                Experimente a liberdade com estilo
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-8">
+                Alugue carros de alto padrão com atendimento exclusivo e retirada rápida.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <span class="bg-gold hover:bg-opacity-80 text-black font-medium px-8 py-3 rounded-md transition-all duration-300 w-full sm:w-auto cursor-pointer">
+                    Ver frota
+                </span>
+                <span class="bg-transparent border-2 border-white hover:border-gold hover:text-gold text-white font-medium px-8 py-3 rounded-md transition-all duration-300 w-full sm:w-auto cursor-pointer">
+                    Alugar agora
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-black">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-4">Experiência Premium</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Descubra os benefícios exclusivos de alugar um veículo de luxo com a AutoDrive.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div id="benefit-card-1" class="bg-graphite p-8 rounded-lg text-center hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gold bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-crown text-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Atendimento Premium</h3>
+                    <p class="text-gray-400">Serviço personalizado com concierge disponível 24 horas para assistência.</p>
+                </div>
+                
+                <div id="benefit-card-2" class="bg-graphite p-8 rounded-lg text-center hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gold bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-shield-alt text-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Seguro Incluso</h3>
+                    <p class="text-gray-400">Proteção completa para você dirigir com tranquilidade e segurança.</p>
+                </div>
+                
+                <div id="benefit-card-3" class="bg-graphite p-8 rounded-lg text-center hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gold bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-file-signature text-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Sem Burocracia</h3>
+                    <p class="text-gray-400">Processo simplificado de reserva e retirada para economizar seu tempo.</p>
+                </div>
+                
+                <div id="benefit-card-4" class="bg-graphite p-8 rounded-lg text-center hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gold bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-car-side text-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Frota de Luxo Renovada</h3>
+                    <p class="text-gray-400">Veículos premium com no máximo 1 ano de uso e manutenção impecável.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Catalog -->
+    <section id="fleet" class="py-20 bg-gradient-to-b from-graphite to-black">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-4">Nossa Frota Premium</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Selecione o veículo perfeito para sua próxima experiência de condução.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Car 1 -->
+                <div id="car-card-1" class="bg-black rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/5ef28eecea-544a736b91cf4b82c350.png" alt="Black Mercedes-Benz S-Class luxury sedan front view, studio lighting, dark background, premium car photography">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold">Mercedes S-Class</h3>
+                            <span class="text-gold font-medium">2023</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="flex space-x-2 text-sm text-gray-400">
+                                <span><i class="fa-solid fa-car-side mr-1"></i> Sedan</span>
+                                <span><i class="fa-solid fa-gauge-high mr-1"></i> 330 cv</span>
+                                <span><i class="fa-solid fa-gas-pump mr-1"></i> Híbrido</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-sm text-gray-400">Diária a partir de</span>
+                                <p class="text-xl font-semibold text-gold">R$ 1.200</p>
+                            </div>
+                            <span class="bg-gold hover:bg-opacity-80 text-black font-medium px-4 py-2 rounded-md transition-all duration-300 cursor-pointer">
+                                Ver detalhes
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 2 -->
+                <div id="car-card-2" class="bg-black rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/13ad0a4adf-c5b687cbfa0d3f0508ba.png" alt="BMW 7 Series black luxury car front angle view, studio lighting, dark background, premium car photography">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold">BMW Série 7</h3>
+                            <span class="text-gold font-medium">2023</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="flex space-x-2 text-sm text-gray-400">
+                                <span><i class="fa-solid fa-car-side mr-1"></i> Sedan</span>
+                                <span><i class="fa-solid fa-gauge-high mr-1"></i> 320 cv</span>
+                                <span><i class="fa-solid fa-gas-pump mr-1"></i> Gasolina</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-sm text-gray-400">Diária a partir de</span>
+                                <p class="text-xl font-semibold text-gold">R$ 1.150</p>
+                            </div>
+                            <span class="bg-gold hover:bg-opacity-80 text-black font-medium px-4 py-2 rounded-md transition-all duration-300 cursor-pointer">
+                                Ver detalhes
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 3 -->
+                <div id="car-card-3" class="bg-black rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7277ac086d-f415f813d7371a47819b.png" alt="Audi A8 black luxury sedan front view, studio lighting, dark background, premium car photography">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold">Audi A8</h3>
+                            <span class="text-gold font-medium">2023</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="flex space-x-2 text-sm text-gray-400">
+                                <span><i class="fa-solid fa-car-side mr-1"></i> Sedan</span>
+                                <span><i class="fa-solid fa-gauge-high mr-1"></i> 340 cv</span>
+                                <span><i class="fa-solid fa-gas-pump mr-1"></i> Híbrido</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-sm text-gray-400">Diária a partir de</span>
+                                <p class="text-xl font-semibold text-gold">R$ 1.180</p>
+                            </div>
+                            <span class="bg-gold hover:bg-opacity-80 text-black font-medium px-4 py-2 rounded-md transition-all duration-300 cursor-pointer">
+                                Ver detalhes
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 4 -->
+                <div id="car-card-4" class="bg-black rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/8668a18ac2-8f60e19ff57f2554940b.png" alt="Porsche Panamera black luxury sports car front view, studio lighting, dark background, premium car photography">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold">Porsche Panamera</h3>
+                            <span class="text-gold font-medium">2023</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="flex space-x-2 text-sm text-gray-400">
+                                <span><i class="fa-solid fa-car-side mr-1"></i> Esportivo</span>
+                                <span><i class="fa-solid fa-gauge-high mr-1"></i> 440 cv</span>
+                                <span><i class="fa-solid fa-gas-pump mr-1"></i> Gasolina</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-sm text-gray-400">Diária a partir de</span>
+                                <p class="text-xl font-semibold text-gold">R$ 1.450</p>
+                            </div>
+                            <span class="bg-gold hover:bg-opacity-80 text-black font-medium px-4 py-2 rounded-md transition-all duration-300 cursor-pointer">
+                                Ver detalhes
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 5 -->
+                <div id="car-card-5" class="bg-black rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/6e3e4099f8-cb054d03c3ba71b8aafc.png" alt="Range Rover black luxury SUV front view, studio lighting, dark background, premium car photography">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold">Range Rover</h3>
+                            <span class="text-gold font-medium">2023</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="flex space-x-2 text-sm text-gray-400">
+                                <span><i class="fa-solid fa-car-side mr-1"></i> SUV</span>
+                                <span><i class="fa-solid fa-gauge-high mr-1"></i> 380 cv</span>
+                                <span><i class="fa-solid fa-gas-pump mr-1"></i> Diesel</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-sm text-gray-400">Diária a partir de</span>
+                                <p class="text-xl font-semibold text-gold">R$ 1.350</p>
+                            </div>
+                            <span class="bg-gold hover:bg-opacity-80 text-black font-medium px-4 py-2 rounded-md transition-all duration-300 cursor-pointer">
+                                Ver detalhes
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car 6 -->
+                <div id="car-card-6" class="bg-black rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/9d9aa2aaec-d0b4ab79e3ece5745623.png" alt="Maserati Quattroporte black luxury sedan front view, studio lighting, dark background, premium car photography">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold">Maserati Quattroporte</h3>
+                            <span class="text-gold font-medium">2023</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="flex space-x-2 text-sm text-gray-400">
+                                <span><i class="fa-solid fa-car-side mr-1"></i> Sedan</span>
+                                <span><i class="fa-solid fa-gauge-high mr-1"></i> 410 cv</span>
+                                <span><i class="fa-solid fa-gas-pump mr-1"></i> Gasolina</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-sm text-gray-400">Diária a partir de</span>
+                                <p class="text-xl font-semibold text-gold">R$ 1.550</p>
+                            </div>
+                            <span class="bg-gold hover:bg-opacity-80 text-black font-medium px-4 py-2 rounded-md transition-all duration-300 cursor-pointer">
+                                Ver detalhes
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <span class="inline-flex items-center bg-transparent border-2 border-gold hover:bg-gold hover:text-black text-gold font-medium px-8 py-3 rounded-md transition-all duration-300 cursor-pointer">
+                    Ver toda a frota
+                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-black relative">
+        <div class="absolute inset-0 z-0 opacity-10">
+            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/df119bbae9-12f8a6ef5d860131a79c.png" alt="abstract luxury pattern with gold elements on black background, elegant texture">
+        </div>
+        
+        <div class="container mx-auto px-4 md:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-4">O que dizem nossos clientes</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Experiências reais de quem já aproveitou nossos serviços premium.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div id="testimonial-1" class="bg-graphite p-8 rounded-lg relative">
+                    <div class="absolute -top-4 left-8 text-gold text-6xl opacity-20">"</div>
+                    <div class="relative z-10">
+                        <p class="text-gray-300 mb-6 italic">O atendimento foi impecável. Reservei um BMW Série 7 para um fim de semana especial e superou todas as expectativas. O processo foi simples e o carro estava em perfeitas condições.</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                                <img src="" alt="Ricardo" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Ricardo Mendes</h4>
+                                <div class="flex text-gold mt-1">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div id="testimonial-2" class="bg-graphite p-8 rounded-lg relative">
+                    <div class="absolute -top-4 left-8 text-gold text-6xl opacity-20">"</div>
+                    <div class="relative z-10">
+                        <p class="text-gray-300 mb-6 italic">Já aluguei em várias empresas, mas a AutoDrive oferece um nível de serviço incomparável. A entrega foi pontual e o Range Rover estava impecável. Certamente voltarei a alugar.</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                                <img src="" alt="Mariana" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Mariana Costa</h4>
+                                <div class="flex text-gold mt-1">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div id="testimonial-3" class="bg-graphite p-8 rounded-lg relative">
+                    <div class="absolute -top-4 left-8 text-gold text-6xl opacity-20">"</div>
+                    <div class="relative z-10">
+                        <p class="text-gray-300 mb-6 italic">Aluguei um Porsche Panamera para uma viagem de negócios e fiquei impressionado com a qualidade do veículo e do serviço. O processo foi rápido e sem complicações. Recomendo fortemente.</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                                <img src="" alt="Carlos" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Carlos Oliveira</h4>
+                                <div class="flex text-gold mt-1">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="cta" class="py-20 bg-gradient-to-b from-black to-graphite">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="font-playfair text-3xl md:text-5xl font-bold mb-6">Está pronto para dirigir o carro dos seus sonhos?</h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-10">Experimente o melhor em aluguel de carros de luxo com a AutoDrive. Atendimento personalizado e veículos impecáveis para momentos inesquecíveis.</p>
+            <span class="inline-block bg-gold hover:bg-opacity-80 text-black font-semibold px-10 py-4 rounded-md text-lg transition-all duration-300 cursor-pointer">
+                Reserve agora
+            </span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="font-playfair text-3xl font-bold mb-6">Entre em contato</h2>
+                    <p class="text-gray-400 mb-8">Estamos à disposição para esclarecer suas dúvidas e ajudá-lo a escolher o veículo ideal para sua necessidade.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-gold bg-opacity-20 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fa-solid fa-location-dot text-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">Endereço</h3>
+                                <p class="text-gray-400">Av. Paulista, 1000 - Bela Vista<br>São Paulo - SP, 01310-100</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-gold bg-opacity-20 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fa-solid fa-phone text-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">Telefone</h3>
+                                <p class="text-gray-400">+55 (11) 3456-7890</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-gold bg-opacity-20 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fa-solid fa-envelope text-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">Email</h3>
+                                <p class="text-gray-400">contato@autodrive.com.br</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-gold bg-opacity-20 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fa-solid fa-clock text-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">Horário de funcionamento</h3>
+                                <p class="text-gray-400">Segunda a Sexta: 8h às 20h<br>Sábado: 9h às 18h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="bg-graphite p-8 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-6">Envie sua mensagem</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-1">Nome</label>
+                                <input type="text" class="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-gold">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-1">Email</label>
+                                <input type="email" class="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-gold">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-400 mb-1">Telefone</label>
+                            <input type="tel" class="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-gold">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-400 mb-1">Mensagem</label>
+                            <textarea rows="4" class="w-full bg-black border border-gray-700 rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-gold"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gold hover:bg-opacity-80 text-black font-medium py-3 rounded-md transition-all duration-300">
+                            Enviar mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-black pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <span class="flex items-center mb-6 cursor-pointer">
+                        <span class="text-2xl font-playfair font-bold text-white">Auto<span class="text-gold">Drive</span></span>
+                    </span>
+                    <p class="text-gray-400 mb-6">Experiência premium em aluguel de carros de luxo. Atendimento personalizado e veículos de alto padrão.</p>
+                    <div class="flex space-x-4">
+                        <span class="w-10 h-10 bg-graphite rounded-full flex items-center justify-center text-gray-400 hover:text-gold transition-colors duration-300 cursor-pointer">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </span>
+                        <span class="w-10 h-10 bg-graphite rounded-full flex items-center justify-center text-gray-400 hover:text-gold transition-colors duration-300 cursor-pointer">
+                            <i class="fa-brands fa-instagram"></i>
+                        </span>
+                        <span class="w-10 h-10 bg-graphite rounded-full flex items-center justify-center text-gray-400 hover:text-gold transition-colors duration-300 cursor-pointer">
+                            <i class="fa-brands fa-twitter"></i>
+                        </span>
+                        <span class="w-10 h-10 bg-graphite rounded-full flex items-center justify-center text-gray-400 hover:text-gold transition-colors duration-300 cursor-pointer">
+                            <i class="fa-brands fa-youtube"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Links rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-gray-400 hover:text-gold transition-colors duration-300 cursor-pointer">Home</span></li>
+                        <li><span class="text-gray-400 hover:text-gold transition-colors duration-300 cursor-pointer">Benefícios</span></li>
+                        <li><span class="text-gray-400 hover:text-gold transition-colors duration-300 cursor-pointer">Nossa frota</span></li>
+                        <li><span class="text-gray-400 hover:text-gold transition-colors duration-300 cursor-pointer">Depoimentos</span></li>
+                        <li><span class="text-gray-400 hover:text-gold transition-colors duration-300 cursor-pointer">Contato</span></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Informações</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-gray-400 hover:text-gold transition-colors duration-300 cursor-pointer">Sobre nós</span></li>
+                        <li><span class="text-gray-400 hover:text-gold transition-colors duration-300 cursor-pointer">Termos e condições</span></li>
+                        <li><span class="text-gray-400 hover:text-gold transition-colors duration-300 cursor-pointer">Política de privacidade</span></li>
+                        <li><span class="text-gray-400 hover:text-gold transition-colors duration-300 cursor-pointer">FAQ</span></li>
+                        <li><span class="text-gray-400 hover:text-gold transition-colors duration-300 cursor-pointer">Carreiras</span></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Inscreva-se para receber ofertas exclusivas e novidades sobre nossa frota.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu email" class="bg-graphite border border-gray-700 rounded-l-md px-4 py-2 w-full text-white focus:outline-none focus:ring-2 focus:ring-gold">
+                        <button type="submit" class="bg-gold hover:bg-opacity-80 text-black font-medium px-4 rounded-r-md transition-all duration-300">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500">© 2023 AutoDrive. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body></html>
